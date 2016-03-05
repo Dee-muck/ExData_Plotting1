@@ -1,3 +1,6 @@
+##Necessary Libraries
+library(sqldf)
+
 ## Setting working directory
 setwd("./Exploratory_Data_Analysis/Week1/Course_project")
 
