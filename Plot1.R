@@ -17,6 +17,9 @@ if (!file.exists("data/household_power_consumption.txt")) {
         hpc_Data <- read.table("./data/household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
 }
 
+##Also the data can be subsetted directly while reading:
+hpc_Data_ds <- read.csv.sql("./data/household_power_consumption.txt", sql="SELECT * from file WHERE Date = '1/2/2007' OR Date = '2/2/2007'", header=TRUE, sep=";")
+
 #Comverting Date to dateformat
 hpc_Data$Date<- as.Date(hpc_Data$Date, format="%d/%m/%Y")
 
